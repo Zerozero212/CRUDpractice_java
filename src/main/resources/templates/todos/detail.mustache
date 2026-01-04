@@ -1,0 +1,20 @@
+{{>layouts/header}}
+
+<div class="m-3">
+    {{#todo}}
+        <h1>Todo : {{title}}</h1>
+        <hr>
+        <p>Detail : {{content}}</p>
+        <p>Deadline : {{deadline}}</p>
+        <p>Priority : {{priority}}</p>
+        <p>Status : {{status}}</p>
+    {{/todo}}
+</div>
+<hr>
+<div>
+    <a href="/todos/home" class="btn btn-primary ms-2">Home</a>
+    <a href="/todos/list" class="btn btn-primary ms-2">List</a>
+    <a href="/todos/{{todo.id}}/edit" class="btn btn-success ms-2">Edit</a>
+    <a href="/todos/{{todo.id}}/delete" class="btn btn-danger ms-2">Delete</a>
+</div>
+{{>layouts/footer}}

@@ -1,0 +1,32 @@
+{{>layouts/header}}
+<div class="btn-list mt-3">
+    <a href="/todos/home" class="btn btn-primary ms-2">Home</a>
+    <a href="/todos/new" class="btn btn-primary ms-2">CREATE</a>
+</div>
+
+<hr>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Deadline</th>
+        <th scope="col">Priority</th>
+        <th scope="col">Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#todolist}}
+        <tr>
+            <th>{{id}}</th>
+            <td><a href="/todos/{{id}}">{{title}}</a></td>
+            <td>{{deadline}}</td>
+            <td>{{priority}}</td>
+            <td>{{status}}</td>
+        </tr>
+    {{/todolist}}
+    </tbody>
+</table>
+
+{{>layouts/footer}}

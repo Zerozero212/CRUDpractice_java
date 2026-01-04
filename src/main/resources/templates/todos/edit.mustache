@@ -1,0 +1,54 @@
+{{>layouts/header}}
+
+{{#todo}}
+<form class="container" action="/todos/update" method="post">
+    <input type="hidden" name="id" value="{{id}}">
+    <div class="mb-3">
+        <label class="form-label" for="title">할 일</label>
+        <input class="form-control" type="text" id="title" name="title" value="{{title}}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="content">세부내용</label>
+        <input class="form-control" type="text" id="content" name="content" value="{{content}}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="deadline">기한</label>
+        <input class="form-control w-auto" type="date" id="deadline" name="deadline" value="{{deadline}}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="priority">우선순위</label>
+        <div>
+            <input type="radio" class="btn-check" name="priority" id="p-option1" value="긴급" autocomplete="off" {{#isUrgent}}checked{{/isUrgent}}>
+            <label class="btn btn-outline-danger" for="p-option1">긴급</label>
+
+            <input type="radio" class="btn-check" name="priority" id="p-option2" value="보통" autocomplete="off" {{#isNormal}}checked{{/isNormal}}>
+            <label class="btn btn-outline-success" for="p-option2">보통</label>
+
+            <input type="radio" class="btn-check" name="priority" id="p-option3" value="나중" autocomplete="off" {{#isLow}}checked{{/isLow}}>
+            <label class="btn btn-outline-primary" for="p-option3">나중</label>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="status">상태</label>
+        <div>
+            <input type="radio" class="btn-check" name="status" id="s-option1" value="TODO" autocomplete="off" {{#isTODO}}checked{{/isTODO}}>
+            <label class="btn btn-outline-primary" for="s-option1">TODO</label>
+
+            <input type="radio" class="btn-check" name="status" id="s-option2" value="IN_PROGRESS" autocomplete="off" {{#isPROG}}checked{{/isPROG}}>
+            <label class="btn btn-outline-success" for="s-option2">IN_PROGRESS</label>
+
+            <input type="radio" class="btn-check" name="status" id="s-option3" value="DONE" autocomplete="off" {{#isDONE}}checked{{/isDONE}}>
+            <label class="btn btn-outline-secondary" for="s-option3">DONE</label>
+
+            <input type="radio" class="btn-check" name="status" id="s-option4" value="HOLD" autocomplete="off" {{#isHOLD}}checked{{/isHOLD}}>
+            <label class="btn btn-outline-warning" for="s-option4">HOLD</label>
+        </div>
+    </div>
+    <div class="mb-3">
+
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{{/todo}}
+
+{{>layouts/footer}}

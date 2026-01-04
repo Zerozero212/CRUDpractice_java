@@ -1,0 +1,32 @@
+{{>layouts/header}}
+
+<form class="container" action="/todos/create" method="post">
+    <div class="mb-3">
+        <label class="form-label" for="title">할 일</label>
+        <input class="form-control" type="text" id="title" name="title">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="content">세부내용</label>
+        <input class="form-control" type="text" id="content" name="content">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="deadline">기한</label>
+        <input class="form-control w-auto" type="date" id="deadline" name="deadline">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="priority">우선순위</label>
+        <div>
+            <input type="radio" class="btn-check" name="priority" id="option1" value="긴급" autocomplete="off">
+            <label class="btn btn-outline-danger" for="option1">긴급</label>
+
+            <input type="radio" class="btn-check" name="priority" id="option2" value="보통" autocomplete="off" checked>
+            <label class="btn btn-outline-success" for="option2">보통</label>
+
+            <input type="radio" class="btn-check" name="priority" id="option3" value="나중" autocomplete="off">
+            <label class="btn btn-outline-primary" for="option3">나중</label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{{>layouts/footer}}
